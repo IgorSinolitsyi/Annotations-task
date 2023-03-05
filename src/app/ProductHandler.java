@@ -10,6 +10,7 @@ public class ProductHandler {
         new ProductInfo();
         Class<ProductInfo> infoClass = ProductInfo.class;
         getAnnot(infoClass);
+
         Method method = infoClass.getMethod("getData");
         getAnnot(method);
     }
@@ -17,7 +18,6 @@ public class ProductHandler {
     static void getAnnot(AnnotatedElement element) {
 
         try {
-
             Annotation[] annotations = element.getAnnotations();
             for (Annotation annotation : annotations) {
                 if (annotation instanceof Product product) {
